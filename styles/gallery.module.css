@@ -1,0 +1,183 @@
+.container {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 110;
+  width: 100%;
+  padding: 1.5rem 0;
+  mix-blend-mode: difference;
+  color: var(--cream);
+}
+
+.gallery_menu {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 0rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  z-index: 110;
+}
+
+.counter {
+  margin-left: auto;
+}
+
+.galleryToggle {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  z-index: 100;
+  background-color: var(--cream);
+}
+
+.gridItem {
+  grid-column: span 1;
+  height: calc(100vh / 3);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.gridImage {
+  position: relative;
+  transition: transform 0.25s;
+  height: 100%;
+  transform: scale(0.95);
+}
+
+.gridImage:hover {
+  transform: scale(1);
+}
+
+.carousel {
+  background-color: var(--cream);
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  user-select: none;
+  z-index: 60;
+}
+
+.carouselItem {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* padding: 4rem; */
+}
+
+.carouselImage {
+  background: black;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  cursor: pointer;
+}
+
+.closeModal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2rem;
+  font-size: 2.5rem;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.carouselImageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  /* width: 100vw; */
+  height: 100vh;
+  column-gap: var(--gap);
+  overflow: hidden;
+  /* gap: 1rem; */
+  /* justify-content: end; */
+  /* align-items: end; */
+}
+
+.carouselImageGrid_image {
+  position: relative;
+  grid-column: span 1;
+  display: block;
+  max-height: calc(50vh - 2rem);
+  height: 100%;
+  width: 100%;
+  transition: 500ms;
+  cursor: pointer;
+}
+
+.carouselImageGrid_image:hover {
+  transform: scale(0.99);
+}
+
+.carouselImageGrid_image:nth-of-type(odd) {
+  align-self: end;
+  justify-self: end;
+}
+
+.carouselImageGrid_image:nth-of-type(1) {
+  transform-origin: bottom right;
+}
+.carouselImageGrid_image:nth-of-type(2) {
+  transform-origin: bottom left;
+}
+.carouselImageGrid_image:nth-of-type(3) {
+  transform-origin: top right;
+}
+.carouselImageGrid_image:nth-of-type(4) {
+  transform-origin: top left;
+}
+
+.carouselImageGrid_image:nth-of-type(even) {
+  align-self: start;
+  justify-self: start;
+}
+
+.carouselButton {
+  position: absolute;
+  width: 8rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nextButton {
+  right: 0;
+  padding-bottom: 5rem;
+  justify-content: end;
+}
+
+.prevButton {
+  padding-top: 5rem;
+  left: 0;
+  justify-content: start;
+}
